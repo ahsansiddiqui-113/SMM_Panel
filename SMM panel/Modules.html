@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <!-- <link rel="stylesheet" href="module.css"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="Setting.html" onclick="showSection('general')">General</a>
+        <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+        <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+        <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+        <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+        <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+        <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+        <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+        <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+        <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+        <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+      </div>
+
+    <div class="container">
+        <h1>Admin Settings</h1>
+        <section class="settings-section">
+            <h2>Modules</h2>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="currencies">
+                    Admin Area Currencies
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="googleLogin">
+                    Google Login
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="servicesSearch">
+                    Services Search
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="paymentHistory">
+                    Payment History
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="transactionHistory">
+                    Transaction History
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="ticketsButton">
+                    Tickets Button
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="apiVersion">
+                    API Version
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="affiliateSystem">
+                    Affiliate System
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="assignment">
+                    Assignment
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="freeBalance">
+                    Free Balance
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="signupDiscount">
+                    Signup Discount
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="automaticDiscountSet">
+                    Automatic Discount Set
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="automaticCashback">
+                    Automatic Cashback
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="massOrders">
+                    Mass Orders
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="childPanelsSelling">
+                    Child Panels Selling
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="autoLoginAfterSignup">
+                    Auto Login After Signup
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="updates">
+                    Updates
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="averageTime">
+                    Average Time
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="pendingOrdersDisplay">
+                    Pending Orders Display
+                </label>
+            </div>
+        </section>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

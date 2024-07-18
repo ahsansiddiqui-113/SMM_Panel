@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="provider.css"> -->
+</head>
+<body>
+    <div class="sidebar">
+        <a href="Setting.html">General</a>
+        <a href="Provider.html">Providers</a>
+        <a href="Payment.html">Payments</a>
+        <a href="UserGroup.html">User Groups</a>
+        <a href="Currency.html">Currency</a>
+        <a href="Notification.html">Notification</a>
+        <a href="E-notification.html">E-Notification</a>
+        <a href="Ticket.html">Tickets</a>
+        <a href="Modules.html">Modules</a>
+        <a href="Integration.html">Integration</a>
+        <a href="SignupSetting.html">Signup Settings</a>
+    </div>
+    <div class="container">
+        <h1>Providers</h1>
+        <button id="addProviderBtn" class="btn">Add provider</button>
+        <ul id="providerList" class="provider-list"></ul>
+        <div id="providerFormContainer" class="provider-form-container">
+            <h2 id="formTitle">Add provider</h2>
+            <form id="providerForm">
+                <label>
+                    API Name:
+                    <input type="text" id="apiName" required>
+                </label>
+                <label>
+                    URL:
+                    <input type="url" id="url" required>
+                </label>
+                <label>
+                    API key:
+                    <input type="text" id="apiKey" required>
+                </label>
+                <button type="submit" class="btn">Add provider</button>
+                <button type="button" id="cancelBtn" class="btn">Cancel</button>
+            </form>
+        </div>
+        <button id="syncCancelBtn" class="btn">Cancel Sync</button>
+        <button id="backupDescriptionsBtn" class="btn">Backup Descriptions</button>
+    </div>
+    <script src="provider.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sidebar">
+    <a href="Setting.html" onclick="showSection('general')">General</a>
+    <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+    <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+    <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+    <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+    <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+    <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+    <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+    <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+    <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+    <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+  </div>
+
+  <div class="content">
+    <div id="general" class="section active">
+      <h1>General Settings</h1>
+      <div class="new-year">
+        <p>New Year Decoration</p>
+        <button> Activate</button>
+      </div>
+      <div class="setting">
+        <label for="logo">Logo (Max-Height: 100px , Max-Width: 254px )</label>
+        <input type="file" id="logo" accept="image/*">
+      </div>
+
+      <div class="setting">
+        <label for="favicon">Favicon (32 x 32)</label>
+        <input type="file" id="favicon" accept="image/*">
+      </div>
+
+      <div class="setting">
+        <label for="panel-name">Panel Name</label>
+        <input type="text" id="panel-name">
+      </div>
+
+      <div class="setting">
+        <label for="panel-footer">Panel Footer</label>
+        <textarea id="panel-footer" rows="4"></textarea>
+      </div>
+
+      <div class="setting">
+        <label for="currency-format">Currency Format</label>
+        <select id="currency-format">
+          <option value="$">$ (Dollar)</option>
+          <option value="€">€ (Euro)</option>
+          <option value="¥">¥ (Yen)</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label for="rates-rounding">Rates Rounding</label>
+        <input type="number" id="rates-rounding">
+      </div>
+
+      <div class="setting">
+        <label for="trail-zeros">Trail Zeros</label>
+        <input type="checkbox" id="trail-zeros">
+      </div>
+
+      <div class="setting">
+        <label for="max-pending-tickets">Max Pending Tickets per User</label>
+        <input type="number" id="max-pending-tickets">
+      </div>
+
+      <div class="setting">
+        <label for="default-timezone">Default TimeZone</label>
+        <input type="text" id="default-timezone">
+      </div>
+
+      <div class="setting">
+        <label for="services-list-format">Services List Format</label>
+        <select id="services-list-format">
+          <option value="grid">Grid</option>
+          <option value="list">List</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label for="custom-list-format">Custom List Format</label>
+        <input type="text" id="custom-list-format">
+      </div>
+
+      <div class="setting">
+        <label for="services-list-new-style">Services List New Style</label>
+        <input type="checkbox" id="services-list-new-style">
+      </div>
+
+      <div class="setting">
+        <label for="display-services-guests">Display Services to Guests Users</label>
+        <input type="checkbox" id="display-services-guests">
+      </div>
+
+      <div class="setting">
+        <label for="signup-page">Signup Page</label>
+        <input type="text" id="signup-page">
+      </div>
+
+      <div class="setting">
+        <label for="email-confirmation">Email Confirmation</label>
+        <input type="checkbox" id="email-confirmation">
+      </div>
+
+      <div class="setting">
+        <label for="terms-checkbox">Terms Checkbox</label>
+        <input type="checkbox" id="terms-checkbox">
+      </div>
+
+      <div class="setting">
+        <label for="api-key-restriction">API Key Restriction</label>
+        <input type="text" id="api-key-restriction">
+      </div>
+
+      <!-- Earn Referral on Panel Sale -->
+      <div class="setting">
+        <label for="earn-referral">Do you want to earn upto 25% referral on every panel sale?</label>
+        <input type="checkbox" id="earn-referral">
+      </div>
+
+      <!-- Custom Header Code -->
+      <div class="setting">
+        <label for="custom-header-code">Custom Header Code</label>
+        <textarea id="custom-header-code" rows="4"></textarea>
+      </div>
+
+      <!-- Custom Footer Code -->
+      <div class="setting">
+        <label for="custom-footer-code">Custom Footer Code</label>
+        <textarea id="custom-footer-code" rows="4"></textarea>
+      </div>
+
+      <!-- Admin Rates Rounding -->
+      <div class="setting">
+        <label for="admin-rates-rounding">Admin Rates Rounding</label>
+        <input type="number" id="admin-rates-rounding">
+      </div>
+
+      <!-- Generate Invoice 7 Days Prior to Expiry -->
+      <div class="setting">
+        <label for="generate-invoice">Generate Invoice 7 Days Prior to Expiry</label>
+        <input type="checkbox" id="generate-invoice">
+      </div>
+
+      <!-- Show Provider Status -->
+      <div class="setting">
+        <label for="show-provider-status">Show Provider Status</label>
+        <input type="checkbox" id="show-provider-status">
+      </div>
+
+      <!-- Admin Payment Memo Display -->
+      <div class="setting">
+        <label for="admin-payment-memo">Admin Payment Memo Display</label>
+        <input type="checkbox" id="admin-payment-memo">
+      </div>
+
+      <!-- Custom SitemapNo -->
+      <div class="setting">
+        <label for="custom-sitemapno">Custom SitemapNo</label>
+        <input type="text" id="custom-sitemapno">
+      </div>
+
+      <!-- Custom Robots.txt -->
+      <div class="setting">
+        <label for="custom-robots">Custom Robots.txt</label>
+        <input type="file" id="custom-robots" accept=".txt">
+        <span class="hint">Upload a custom robots.txt file to override the default.</span>
+      </div>
+
+    </div>
+    <!-- Add other sections similarly -->
+  </div>
+
+    <div id="providers" class="section">
+
+    </div>
+</div>
+
+    <div id="payments" class="section">
+      <h1>Payments Settings</h1>
+    </div>
+
+    <!-- Other sections for different settings -->
+
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      var selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <!-- <link rel="stylesheet" href="payment.css"> -->
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="Setting.html" onclick="showSection('general')">General</a>
+        <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+        <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+        <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+        <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+        <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+        <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+        <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+        <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+        <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+        <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+      </div>
+
+  <div class="content">
+    <h1>Payment Methods</h1>
+
+    <div class="provider">
+      <div class="dropdown">
+        <button id="dropdown-international" class="dropdown-btn">International Payment (USD)</button>
+        <div class="dropdown-content" id="content-international">
+          <a href="CurrencySetting.html" data-method="paypal">Paypal</a>
+          <a href="CurrencySetting.html" data-method="perfect-money-usd">Perfect Money USD</a>
+          <a href="CurrencySetting.html" data-method="perfect-money-euro">Perfect Money Euro</a>
+          <a href="CurrencySetting.html" data-method="web-money">Web Money</a>
+          <a href="CurrencySetting.html" data-method="payza">Payza</a>
+          <a href="CurrencySetting.html" data-method="stripe">Stripe</a>
+          <a href="CurrencySetting.html" data-method="tap">Tap</a>
+          <a href="CurrencySetting.html" data-method="2checkout">2Checkout</a>
+          <a href="CurrencySetting.html" data-method="paypal-invoice">Paypal Invoice</a>
+          <a href="CurrencySetting.html" data-method="coinpayments">Coinpayments</a>
+          <a href="CurrencySetting.html" data-method="payeer">Payeer</a>
+          <a href="CurrencySetting.html" data-method="voucher-system">Voucher System</a>
+          <a href="CurrencySetting.html" data-method="unitpay">Unitpay</a>
+          <a href="CurrencySetting.html" data-method="cashmaal">Cashmaal</a>
+          <a href="CurrencySetting.html" data-method="advash">Advash</a>
+          <a href="CurrencySetting.html" data-method="rozer-pay">Rozer Pay</a>
+          <a href="CurrencySetting.html" data-method="payop">Payop</a>
+          <a href="CurrencySetting.html" data-method="coinbase-commerce">Coinbase Commerce</a>
+          <a href="CurrencySetting.html" data-method="payoneer">Payoneer</a>
+          <a href="CurrencySetting.html" data-method="skrill">Skrill</a>
+          <a href="CurrencySetting.html" data-method="stripe-india">Stripe India</a>
+          <a href="CurrencySetting.html" data-method="stripe-3ds">Stripe 3Ds</a>
+          <a href="CurrencySetting.html" data-method="bucksmil">Bucksmil</a>
+          <a href="CurrencySetting.html" data-method="amarpay">Amarpay</a>
+          <a href="CurrencySetting.html" data-method="bux-ph-manual">Bux-Ph Manual</a>
+          <a href="CurrencySetting.html" data-method="manual-payment-method">Manual Payment Method</a>
+          <a href="CurrencySetting.html" data-method="airtm">Airtm</a>
+          <a href="CurrencySetting.html" data-method="whish-money">Whish.Money</a>
+          <a href="CurrencySetting.html" data-method="cashapp-normal">CashApp Normal</a>
+          <a href="CurrencySetting.html" data-method="binance-pay">Binance Pay</a>
+          <a href="CurrencySetting.html" data-method="manual-with-reference-id">Manual with Reference ID</a>
+          <a href="CurrencySetting.html" data-method="big-pay">Big Pay</a>
+          <a href="CurrencySetting.html" data-method="cardinity">Cardinity</a>
+          <a href="CurrencySetting.html" data-method="cryptomus">Cryptomus</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="provider">
+      <div class="dropdown">
+        <button class="dropdown-btn">Inr Payment </button>
+        <div class="dropdown-content">
+          <a href="CurrencySetting.html" data-method="Payumoney">Payumoney</a>
+          <a href="CurrencySetting.html"data-method="">InstaMojo</a>
+          <a href="CurrencySetting.html"data-method="">Paytm</a>
+          <a href="CurrencySetting.html"data-method="">Patym Business</a>
+          <a href="CurrencySetting.html"data-method="">Paytm Checkout</a>
+          <a href="CurrencySetting.html"data-method="">Indian stripe (Razorpay)</a>
+          <a href="CurrencySetting.html"data-method="">Phonepay</a>
+          <a href="CurrencySetting.html"data-method="">Paykun</a>
+          <a href="CurrencySetting.html"data-method="">CashFree</a>
+          <a href="CurrencySetting.html"data-method="">Ccavenue</a>
+          <a href="CurrencySetting.html"data-method="">Payumoney Old</a>
+          <a href="CurrencySetting.html"data-method="">UpiApi</a>
+          <a href="CurrencySetting.html"data-method="">Bharatpe</a>
+          <a href="CurrencySetting.html"data-method="">UpiGateway</a>
+          <a href="CurrencySetting.html"data-method="">Bharatpe</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="provider">
+      <div class="dropdown">
+        <button class="dropdown-btn">Nepali Payment </button>
+        <div class="dropdown-content">
+          <a href="CurrencySetting.html"data-method="">Esewa</a>
+          <a href="CurrencySetting.html"data-method="">Khalti</a>
+          <a href="CurrencySetting.html"data-method="">Ime pay</a>
+          <a href="CurrencySetting.html"data-method="">Paytime</a>
+          <a href="CurrencySetting.html"data-method="">Fonepay</a>
+          <a href="CurrencySetting.html"data-method="">Khalti normal</a>
+          <a href="CurrencySetting.html"data-method="">Moru</a>
+          <a href="CurrencySetting.html"data-method="">Mypay</a>
+          <a href="CurrencySetting.html"data-method="">Esewa token</a>
+          <a href="CurrencySetting.html"data-method="">MyPay Business</a>
+          <a href="CurrencySetting.html"data-method="">Cell Pay</a>
+          <a href="CurrencySetting.html"data-method="">Esewa manual with reference id</a>
+          <a href="CurrencySetting.html"data-method="">Khalti Token</a>
+         
+        </div>
+    </div>
+    </div>
+
+    <div class="provider">
+        <div class="dropdown">
+          <button class="dropdown-btn">Turkish Payment </button>
+          <div class="dropdown-content">
+            <a href="CurrencySetting.html"data-method="Shopier">Shopier</a>
+            <a href="CurrencySetting.html"data-method="Paywant">Paywant</a>
+            <a href="CurrencySetting.html"data-method="Paytr">Paytr</a>
+            <a href="CurrencySetting.html"data-method="Paytr">Paytr(Card)</a>
+          </div>
+      </div>
+      </div>
+
+      <div class="provider">
+        <div class="dropdown">
+          <button class="dropdown-btn">Pakistani Payment </button>
+          <div class="dropdown-content">
+            <a href="CurrencySetting.html"data-method="JazzCash">Jazzcash</a>
+            <a href="CurrencySetting.html"data-method="EasyPaisa">EasyPaisa</a>
+            <a href="CurrencySetting.html"data-method="JazzCash-Qr">JazzCash Qr</a>
+            <a href="CurrencySetting.html"data-method="EasyPaisa-Normal">EasyPaisa Normal</a>
+            <a href="CurrencySetting.html"data-method="JazzCash-Normal">Jazzcash Normal</a>
+            <a href="CurrencySetting.html"data-method="Fiberpay">Fiberpay</a>
+            <a href="CurrencySetting.html"data-method="PayPro">PayPro</a>
+            <a href="CurrencySetting.html"data-method="PayFast">PayFast</a>
+            <a href="CurrencySetting.html"data-method="Bykea.cash">Bykea.cash</a>
+            <a href="CurrencySetting.html"data-method="NayaPay">NayaPay</a>
+            <a href="CurrencySetting.html"data-method="Upaisa">Upaisa</a>
+            <a href="CurrencySetting.html"data-method="BKash-Banglash-payment">BKash Banglash Payment</a>
+            <a href="CurrencySetting.html"data-method="GCash">GCash</a>
+          </div>
+      </div>
+      </div>
+
+  </div>
+</body>
+</html>

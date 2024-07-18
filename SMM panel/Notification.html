@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Settings</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            flex:1;
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .container h2 {
+            margin-top: 0;
+        }
+        .container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .container table th, .container table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        .container table th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            z-index: 1000;
+        }
+        .modal-header {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h3 {
+            margin: 0;
+        }
+        .modal-header .close {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .modal-body {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .form-group .cancel {
+            background-color: #dc3545;
+        }
+        .form-group .cancel:hover {
+            background-color: #c82333;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="Setting.html" onclick="showSection('general')">General</a>
+        <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+        <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+        <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+        <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+        <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+        <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+        <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+        <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+        <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+        <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+      </div>
+
+<div class="container">
+    <h2>Notifications</h2>
+    <button class="btn" id="addNotificationBtn">Add Notification</button>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Notification</th>
+                <th>Date</th>
+                <th>Seen By</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample Data, replace with your actual data -->
+            <tr>
+                <td>142</td>
+                <td>TikTok Live...</td>
+                <td>2024-04-30 00:11:17</td>
+                <td>716</td>
+                <td><button class="btn">Edit</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="notificationModal">
+    <div class="modal-header">
+        <h3>Add Notification</h3>
+        <span class="close" id="closeModal">&times;</span>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="notification-type">Type</label>
+            <select id="notification-type">
+                <option>Simple</option>
+                <option>HTML</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="notification-subject">Subject (up to 100 characters)</label>
+            <input type="text" id="notification-subject" placeholder="Enter subject">
+        </div>
+        <div class="form-group">
+            <label for="notification-message">Message</label>
+            <textarea id="notification-message" rows="4" placeholder="Enter message"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="notification-icon">Icons</label>
+            <input type="text" id="notification-icon" placeholder="Enter icon link or code">
+        </div>
+        <div class="form-group">
+            <label for="button-text">Button Text</label>
+            <input type="text" id="button-text" placeholder="Enter button text">
+        </div>
+        <div class="form-group">
+            <label for="button-color">Button Color</label>
+            <input type="color" id="button-color">
+        </div>
+        <div class="form-group">
+            <label for="visibility-days">Visibility Days</label>
+            <input type="number" id="visibility-days" placeholder="Enter visibility duration">
+        </div>
+        <div class="form-group">
+            <label for="popup-display">Display Popup</label>
+            <select id="popup-display">
+                <option>Center</option>
+                <option>Bottom Corner</option>
+                <option>Sliding from Top</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button id="saveChanges">Save changes</button>
+            <button class="cancel" id="cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<script>
+    document.getElementById('addNotificationBtn').addEventListener('click', function() {
+        document.getElementById('notificationModal').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('notificationModal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    });
+
+    document.getElementById('cancel').addEventListener('click', function() {
+        document.getElementById('notificationModal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    });
+
+    document.getElementById('overlay').addEventListener('click', function() {
+        document.getElementById('notificationModal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

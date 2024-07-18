@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Settings</title>
+    <!-- <link rel="stylesheet" href="ticket.css"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="Setting.html" onclick="showSection('general')">General</a>
+        <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+        <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+        <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+        <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+        <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+        <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+        <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+        <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+        <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+        <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+      </div>
+    <div class="container">
+        <div class="settings-group">
+            <label for="auto-close">Auto Close</label>
+            <select id="auto-close" name="auto-close">
+                <option value="enable">Enable</option>
+                <option value="disable">Disable</option>
+            </select>
+        </div>
+
+        <div class="settings-group">
+            <label for="auto-close-time">Auto Close Time (days)</label>
+            <input type="number" id="auto-close-time" name="auto-close-time" value="8">
+        </div>
+
+        <div class="settings-group">
+            <label for="nicknames">Nicknames</label>
+            <input type="text" id="nicknames" name="nicknames" placeholder="Add Nickname">
+            <div class="nicknames-list">
+                <span class="nickname">Elon</span>
+                <span class="nickname">Thomas</span>
+                <span class="nickname">Elma</span>
+            </div>
+        </div>
+
+        <div class="settings-group">
+            <label for="response-replies">Add Nicknames to Ticket Response Replies</label>
+            <select id="response-replies" name="response-replies">
+                <option value="random">Random Nicknames</option>
+            </select>
+        </div>
+
+        <div class="settings-group">
+            <label for="auto-select-nickname">Auto Select Nickname upon reply</label>
+            <select id="auto-select-nickname" name="auto-select-nickname">
+                <option value="enable">Enable</option>
+                <option value="disable">Disable</option>
+            </select>
+        </div>
+
+        <div class="settings-group">
+            <label for="ticket-section">Ticket Section</label>
+            <select id="ticket-section" name="ticket-section">
+                <option value="v2">V2</option>
+            </select>
+        </div>
+
+        <div class="settings-group">
+            <label for="auto-respond">Auto Respond</label>
+            <select id="auto-respond" name="auto-respond">
+                <option value="enable">Enable</option>
+                <option value="disable">Disable</option>
+            </select>
+        </div>
+
+        <button class="save-btn">Save changes</button>
+    </div>
+</body>
+</html>

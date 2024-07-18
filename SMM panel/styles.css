@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(230, 230, 230);
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #0056b3;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 5px;
+}
+
+.integration-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.integration-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.integration-item span {
+  flex: 1;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.activate-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.settings-section {
+  margin-top: 20px;
+}
+
+.setting-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.setting-item label {
+  display: flex;
+  align-items: center;
+}
+
+.setting-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.sidebar {
+  width: 18%;
+  min-width: 200px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.content {
+  margin-left: 20%;
+  padding: 20px;
+  flex: 1;
+}
+
+.dropdown {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown-btn {
+  background-color: #4c4ba0;
+  color: white;
+  padding: 40px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-btn:hover {
+  background-color: #454ea0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 30%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 30%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.provider {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.provider h2 {
+  margin-top: 0;
+}
+
+.provider p {
+  margin: 10px 0;
+}
+
+.provider button {
+  padding: 10px 20px;
+  background-color: #5b43b1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.provider button:hover {
+  background-color: #544ea1;
+}
+
+.provider-form-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.provider-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.provider-list li {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+}
+
+.field-group {
+  margin-bottom: 20px;
+}
+
+.field-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.field-item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.field-info {
+  flex-grow: 1;
+}
+
+.field-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.field-info p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+}
+
+.settings-group {
+  margin-bottom: 20px;
+}
+
+.settings-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.settings-group input,
+.settings-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nicknames-list {
+  margin-top: 10px;
+}
+
+.nickname {
+  display: inline-block;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.section {
+  display: none;
+  align-content: center;
+}
+
+.section.active {
+  display: block;
+}
+
+.setting {
+  margin-bottom: 20px;
+}
+
+.setting label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.setting input,
+.setting select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.setting textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.setting .upload-btn {
+  margin-top: 5px;
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.setting .upload-btn:hover {
+  background-color: #45a049;
+}
+
+.new-year {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-year p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.new-year button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-year button:hover {
+  background-color: #45a049;
+}
+
+.providers-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.provider {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.provider label {
+  margin-left: 10px;
+}
+
+.provider .activate-btn {
+  margin-left: auto;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Notifications</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            flex:1;
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .panel {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group .row input {
+            flex: 1;
+        }
+
+        .form-group .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group .actions button {
+            flex: 1;
+        }
+
+        .notifications-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notifications-list li {
+            margin-bottom: 10px;
+        }
+
+        .notifications-list li span {
+            display: inline-block;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        .notifications-list li label {
+            margin: 0;
+        }
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .modal-content .form-group {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .panel {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="Setting.html" onclick="showSection('general')">General</a>
+        <a href="Provider.html" onclick="showSection('providers')">Providers</a>
+        <a href="Payment.html" onclick="showSection('payments')">Payments</a>
+        <a href="UserGroup.html" onclick="showSection('user-groups')">User Groups</a>
+        <a href="Currency.html" onclick="showSection('currency')">Currency</a>
+        <a href="Notification.html" onclick="showSection('notification')">Notification</a>
+        <a href="E-notification.html" onclick="showSection('e-notification')">E-Notification</a>
+        <a href="Ticket.html" onclick="showSection('tickets')">Tickets</a>
+        <a href="Modules.html" onclick="showSection('modules')">Modules</a>
+        <a href="Integration.html" onclick="showSection('integration')">Integration</a>
+        <a href="SignupSetting.html" onclick="showSection('signup-settings')">Signup Settings</a>
+    </div>
+
+    <div class="container">
+        <div class="panel">
+            <h2>Users Notifications</h2>
+            <ul class="notifications-list">
+                <li>
+                    <div>
+                        <span>Password reset</span>
+                        <span>
+                            <label for="password-reset">Enabled</label>
+                            <input type="checkbox" id="password-reset" checked>
+                            <button class="editButton" onclick="togglePanel(this)">Edit</button>
+                        </span>
+                    </div>
+                    <br>
+                    <div>
+                        <span>New Message</span>
+                        <span>
+                            <label for="password-reset">Enabled</label>
+                            <input type="checkbox" id="password-reset" checked>
+                            <button class="editButton">Edit</button>
+                        </span>
+                    </div>
+                    <br>
+                    <div>
+                        <span>Welcome</span>
+                        <span>
+                            <label for="password-reset">Enabled</label>
+                            <input type="checkbox" id="password-reset" checked>
+                            <button class="editButton">Edit</button>
+                        </span>
+                    </div>
+                    <br>
+                    <div>
+                        <span>Confirm Email</span>
+                        <span>
+                            <label for="password-reset">Enabled</label>
+                            <input type="checkbox" id="password-reset" checked>
+                            <button class="editButton" >Edit</button>
+                        </span>
+                    </div>
+                    
+                    <br>
+                    <div class="edit-panel" style="display: none;">
+                        <h2>Edit Notification</h2>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" value="Password reset">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status">
+                                <option value="enabled" selected>Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="body">Body</label>
+                            <textarea id="body">Hello,
+                                You requested a password change.
+                                Your username is: {user.username}
+
+                                Your New Password is: {user.password}</textarea>
+                        </div>
+                        <div class="form-group actions">
+                            <button>Send Test</button>
+                            <button>Reset</button>
+                            <button>Save Changes</button>
+                        </div>
+                    </div>
+                </li>
+                <!-- Repeat the pattern for other notifications -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function togglePanel(button) {
+            // Find the parent li element
+            const li = button.closest('li');
+            
+            // Find the edit panel within the li
+            const editPanel = li.querySelector('.edit-panel');
+            
+            // Toggle the display of the edit panel
+            editPanel.style.display = editPanel.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>
